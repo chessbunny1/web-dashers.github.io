@@ -186,7 +186,8 @@ class BootScene extends Phaser.Scene {
       "Why u have to be mad?",
       "It is only game...",
       "Unlock new icons and colors by completing achievements",
-      "y=mx+b"
+      "y=mx+b",
+      "Nicest game ever!"
     ];
     const sliderOriginX = cx - 105;
     const sliderOriginY = cy + 110;
@@ -194,6 +195,7 @@ class BootScene extends Phaser.Scene {
 
     this.load.image("game_bg_01", "assets/game-bg/game_bg_01_001-hd.png");
     this.load.image("sliderBar", "assets/sprites/sliderBar.png");
+    this.load.image("GJ_MenuBeta", "assets/sprites/GJ_MenuBeta.png");
     this.load.atlas("GJ_WebSheet", "assets/sheets/GJ_WebSheet.png", "assets/sheets/GJ_WebSheet.json");
     this.load.atlas("GJ_LaunchSheet", "assets/sheets/GJ_LaunchSheet.png", "assets/sheets/GJ_LaunchSheet.json");
     this.load.image("goldFont", "assets/fonts/goldFont.png");
@@ -243,9 +245,16 @@ class BootScene extends Phaser.Scene {
       this.load.atlas("GJ_GameSheetEditor", "assets/sheets/GJ_GameSheetEditor.png", "assets/sheets/GJ_GameSheetEditor.json");
       this.load.atlas("GJ_GameSheetGlow", "assets/sheets/GJ_GameSheetGlow.png", "assets/sheets/GJ_GameSheetGlow.json");
       this.load.atlas("GJ_GameSheetIcons", "assets/sheets/GJ_GameSheetIcons.png", "assets/sheets/GJ_GameSheetIcons.json");
+      this.load.atlas("Wavesheet", "assets/sheets/Wavesheet.png", "assets/sheets/Wavesheet.json");
+      this.load.json("Spider_AnimDesc", "assets/sheets/Spider_AnimDesc.json");
+      this.load.json("Robot_AnimDesc", "assets/sheets/Robot_AnimDesc.json");
       this.load.atlas("GJ_LaunchSheet", "assets/sheets/GJ_LaunchSheet.png", "assets/sheets/GJ_LaunchSheet.json");
       this.load.atlas("player_ball_00", "assets/sheets/player_ball_00.png", "assets/sheets/player_ball_00.json");
       this.load.atlas("player_dart_00", "assets/sheets/player_dart_00.png", "assets/sheets/player_dart_00.json");
+      this.load.atlas("CCControlColourPickerSpriteSheet-uhd", "assets/sheets/CCControlColourPickerSpriteSheet-uhd.png", "assets/sheets/CCControlColourPickerSpriteSheet-uhd.json");
+      this.load.atlas("PixelSheet_01-hd", "assets/sheets/PixelSheet_01.png", "assets/sheets/PixelSheet_01.json");
+      this.load.atlas("FireSheet_01-hd", "assets/sheets/FireSheet_01-hd.png", "assets/sheets/FireSheet_01-hd.json");
+      this.load.atlas("GJ_ParticleSheet-uhd", "assets/sheets/GJ_ParticleSheet.png", "assets/sheets/GJ_ParticleSheet.json");
       this.load.image("bigFont", "assets/fonts/bigFont.png");
       this.load.text("bigFontFnt", "assets/fonts/bigFont.fnt");
       this.load.image("square04_001", "assets/sprites/square04_001.png");
@@ -271,6 +280,9 @@ class BootScene extends Phaser.Scene {
       this.load.image("tab3", "assets/sprites/tab3.png");
       this.load.image("tab4", "assets/sprites/tab4.png");
       this.load.image("tab5", "assets/sprites/tab5.png");
+      this.load.image("tab6", "assets/sprites/tab6.png");
+      this.load.image("tab7", "assets/sprites/tab7.png");
+      this.load.image("tab8", "assets/sprites/tab8.png");
       this.load.image("GJ_moveBtn", "assets/sprites/GJ_moveBtn.png");
       this.load.image("GJ_moveSBtn", "assets/sprites/GJ_moveSBtn.png");
       this.load.image("slidergroove2", "assets/sprites/slidergroove2.png");
@@ -289,6 +301,7 @@ class BootScene extends Phaser.Scene {
         let paddedIndex = String(index);
         if (paddedIndex.length < 2) paddedIndex = "0" + paddedIndex;
         this.load.image("groundSquare_" + paddedIndex + "_001.png", "assets/game-ground/groundSquare_" + i + "_001.png");
+        this.load.image("groundSquare_" + paddedIndex + "_2_001.png", "assets/game-ground/groundSquare_" + i + "_2_001.png");
       }
 
       for (let i = 1; i < 60; i++) {
