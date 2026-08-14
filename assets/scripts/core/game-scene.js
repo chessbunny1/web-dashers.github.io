@@ -537,7 +537,7 @@ class GameScene extends Phaser.Scene {
       {frame:  "",                       url: "",                                                     angle: 0,                row: 2, col: 0 },
       {frame:  "",                       url: "",                                                     angle: 0,                row: 2, col: 1 },
       {frame:  "",                       url: "",                                                     angle: 0,                row: 2, col: 2 },
-      { frame: "gj_discordIcon_001.png", url: "https://discord.gg/TfEzAVWPSJ",                        angle: 90,               row: 2, col: 3 },
+      { frame: "gj_discordIcon_001.png", url: "https://discord.gg/TfEzAVWPSJ",                        angle: 0,               row: 2, col: 3 },
       { frame: "gj_wbdlIcon_001.png",    url: "https://www.webdemonlist.org/",                        angle: 0,                row: 2, col: 4 },
 
       //{ frame: "gj_instaIcon_001.png",   url: "https://www.instagram.com/",                           angle: -90, flipX: true, row: 1, col: 3 },
@@ -2673,7 +2673,9 @@ this._menuUpdateLogBtn = this.add.image(screenWidth - 30 - 50, 33, "GJ_WebSheet"
         const dim = this.add.rectangle(centerX, centerY, screenWidth, screenHeight, 0, 150 / 255).setInteractive();
         this._mapPopup.add(dim);
 
-        const innerContainer = this.add.container(centerX, centerY).setScale(0);
+        const startX = centerX - (panelWidth / 4.0);
+
+        const innerContainer = this.add.container(startX, centerY);
         this._mapPopup.add(innerContainer);
 
         const map = this.add.image(0, 0, "roadmap_1").setScale(0.5);
@@ -2699,11 +2701,11 @@ this._menuUpdateLogBtn = this.add.image(screenWidth - 30 - 50, 33, "GJ_WebSheet"
         window.addEventListener('keydown', escListener);
 
         this.tweens.add({
-            targets: innerContainer,
-            scale: 1,
-            duration: 660,
-            ease: "Elastic.Out",
-            easeParams: [1, 0.6]
+          targets: innerContainer,
+          x: centerX,
+          duration: 300,
+          ease: "Back.Out",
+          easeParams: [5.0]
         });
     };
     this._closeMapMenu = () => {
